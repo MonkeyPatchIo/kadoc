@@ -23,7 +23,6 @@ kotlin {
     ).forEach {
         it.binaries.framework {
             baseName = "shared"
-            export("io.monkeypatch:mobk-core-iosx64:0.0.11")
         }
 
 
@@ -32,16 +31,18 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                api("io.monkeypatch:mobk-core:0.0.11")
-                api("io.monkeypatch:mobk-viewmodel:0.0.11")
                 api("io.insert-koin:koin-core:3.5.0")
                 implementation("io.ktor:ktor-client-core:2.3.4")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
+                api("dev.icerock.moko:mvvm-core:0.16.1")
+                implementation("org.orbit-mvi:orbit-core:4.6.1")
+                implementation("org.orbit-mvi:orbit-viewmodel:4.6.1")
             }
         }
         val androidMain by getting {
             dependencies {
                 api("io.insert-koin:koin-android:3.5.0")
+                api("org.orbit-mvi:orbit-compose:4.6.1")
                 implementation("io.ktor:ktor-client-okhttp:2.3.4")
             }
         }

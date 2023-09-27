@@ -10,37 +10,21 @@ import SwiftUI
 import shared
 
 struct CounterView: View {
-    let counterStore = Resolver().counterStore()
+   @StateObject var counterStore = ViewModelWrapper<CounterStore, CounterState, CounterStateSideEffect>(Resolver().counterStore())
 
     var body: some View {
-        Observer {
             VStack(spacing: 15) {
-                       Text(verbatim: String(self.counterStore.counter))
+                Text(verbatim: String(self.counterStore.state.counter))
 
                        HStack {
                            Button(action: {
-                               self.counterStore.decrement()
-                           }) {
-                               Text("Decrement")
-                           }.disabled(!self.counterStore.decrementAvailable)
-
-                           Button(action: {
-                               self.counterStore.increment()
+                               self.counterStore.wrapped.increment()
                            }) {
                                Text("Increment")
                            }
                        }
-
-                       if let message = self.counterStore.message {
-                           Text(message)
-                       }
-
-                       if let tip = self.counterStore.tipOfDay {
-                           Text(tip)
-                       }
                    }
                    .padding()
-               }
     }
 }
 
