@@ -10,44 +10,32 @@ import SwiftUI
 import shared
 
 struct CounterView: View {
-    let onTipClicked: () -> Void
-    @StateObject    @VM var counterStore: CounterStore
-
-    init(onTipClicked: @escaping () -> Void = {}) {
-        self.onTipClicked = onTipClicked
-
-        self._counterStore = asStateObject(Resolver().counterStore())
-    }
+    @StateObject    @VM var counterStore: CounterStore = Resolver().counterStore()
 
     var body: some View {
         Observer {
             VStack(spacing: 15) {
                 Text(verbatim: String(self.counterStore.counter))
-
-                       HStack {
-                           Button(action: {
-                               self.counterStore.decrement()
-                           }) {
-                               Text("Decrement")
-                           }.disabled(!self.counterStore.decrementAvailable)
-
-                           Button(action: {
-                               self.counterStore.increment()
-                           }) {
-                               Text("Increment")
-                           }
-                       }
-
-                       if let message = self.counterStore.message {
-                           Text(message)
-                       }
-
-                Button(action: onTipClicked) {
-                    Text("Cat")
+                
+                HStack {
+                    Button(action: {
+                        self.counterStore.decrement()
+                    }) {
+                        Text("Decrement")
+                    }.disabled(!self.counterStore.decrementAvailable)
+                    
+                    Button(action: {
+                        self.counterStore.increment()
+                    }) {
+                        Text("Increment")
+                    }
                 }
-                   }
-                   .padding()
-               }
+                
+                if let message = self.counterStore.message {
+                    Text(message)
+                }
+            }
+        }
     }
 }
 

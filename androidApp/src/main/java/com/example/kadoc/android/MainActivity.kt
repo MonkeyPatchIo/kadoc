@@ -25,15 +25,21 @@ class MainActivity : ComponentActivity() {
                     ) {
                         val navController = rememberNavController()
                         NavHost(
-                            navController = navController, startDestination = "counter"
+                            navController = navController, startDestination = NavigationItem.Home.path
                         ) {
-                            composable("counter") {
-                                CounterView {
-                                    navController.navigate("cat")
+                            composable(NavigationItem.Home.path) {
+                                HomeView {
+                                    navController.navigate(it.path)
                                 }
                             }
-                            composable("cat") {
+                            composable(NavigationItem.Counter.path) {
+                                CounterView()
+                            }
+                            composable(NavigationItem.Tip.path) {
                                 TipView()
+                            }
+                            composable(NavigationItem.Crypto.path) {
+                                CryptoView()
                             }
                         }
                     }
@@ -41,4 +47,8 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+}
+
+enum class NavigationItem(val path: String) {
+  Home("home"),  Counter("counter"), Tip("tip"), Crypto("crypto")
 }

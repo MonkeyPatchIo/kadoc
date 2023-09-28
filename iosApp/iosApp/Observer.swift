@@ -38,24 +38,3 @@ class ReactionObservable<V>: ObservableObject {
 
 }
 
-@propertyWrapper class VM<S>: ObservableObject where S: Mobk_viewmodelMobkViewModel {
-     var wrappedValue: S
-
-    public init(wrappedValue:@escaping @autoclosure () -> S) {
-        self.wrappedValue =  wrappedValue()
-    }
-
-    deinit {
-        self.wrappedValue.onCleared()
-    }
-}
-
-extension Mobk_viewmodelMobkViewModel {
-    func asStateObject<S>() -> StateObject<VM<S>> where S: Mobk_viewmodelMobkViewModel {
-        return StateObject(wrappedValue: VM(wrappedValue: self as! S))
-    }
-}
-
-func asStateObject<S>(_ factory: @autoclosure @escaping () -> S) -> StateObject<VM<S>>  where S: Mobk_viewmodelMobkViewModel {
-    return factory().asStateObject()
-}

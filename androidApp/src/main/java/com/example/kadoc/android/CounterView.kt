@@ -15,7 +15,7 @@ import org.koin.androidx.compose.koinViewModel
 
 
 @Composable
-fun CounterView(onTipClicked: () -> Unit = {}) {
+fun CounterView() {
     val counterStore = koinViewModel<CounterStore>()
     Observer {
         val counter = counterStore.counter
@@ -34,10 +34,6 @@ fun CounterView(onTipClicked: () -> Unit = {}) {
                 message?.let {
                     Text(it)
                 }
-
-                Button(onClick = onTipClicked) {
-                    Text("Tip")
-                }
             }
         }
     }
@@ -45,7 +41,7 @@ fun CounterView(onTipClicked: () -> Unit = {}) {
 
 @Preview
 @Composable
-fun CounterViewPreview() {
+fun CryptoViewPreview() {
     MyApplicationTheme {
         CounterView()
     }

@@ -1,5 +1,10 @@
 import SwiftUI
 
+
+public enum NavigationItem: Hashable {
+    case counter, tip, crypto
+}
+
 class Coordinator: ObservableObject {
     @Published var path = [NavigationItem]()
 
@@ -17,22 +22,21 @@ struct ContentView: View {
 
 	var body: some View {
         NavigationStack(path: $path) {
-            CounterView {
-                path.append(.tip)
-            }
-            .navigationDestination(for: NavigationItem.self) { item in
-                switch item {
-                case .tip:
-                    TipView()
+            HomeView()
+                .navigationDestination(for: NavigationItem.self) { item in
+                    switch item {
+                    case .counter:
+                        CounterView()
+                    case .tip:
+                        TipView()
+                    case .crypto:
+                        CryptoView()
+                    }
                 }
-            }
         }
 	}
 }
 
-enum NavigationItem: Hashable {
-    case  tip
-}
 
 struct ContentView_Previews: PreviewProvider {
 	static var previews: some View {
