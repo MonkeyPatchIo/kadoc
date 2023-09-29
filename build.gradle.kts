@@ -5,6 +5,7 @@ plugins {
     kotlin("android").version("1.9.10").apply(false)
     kotlin("multiplatform").version("1.9.10").apply(false)
     kotlin("plugin.serialization").version("1.9.10").apply(false)
+    id("co.touchlab.skie").version("0.5.0").apply(false)
 }
 
 tasks.register("clean", Delete::class) {

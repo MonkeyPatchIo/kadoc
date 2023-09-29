@@ -14,6 +14,7 @@ struct HomeView: View {
             NavigationLink("MobK Counter", value: NavigationItem.counter)
             NavigationLink("MobK Tip", value: NavigationItem.tip)
             NavigationLink("Crypto use case", value: NavigationItem.crypto)
+            NavigationLink("Roll", value: NavigationItem.roll)
         }
     }
 }

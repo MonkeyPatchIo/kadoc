@@ -8,4 +8,5 @@ object Resolver : KoinComponent {
     fun tipStore(): TipStore = get()
     fun counterStore(): CounterStore = get()
     fun cryptoStore(): CryptoStore = get()
+    fun rollStore(): RollStore = get()
 }

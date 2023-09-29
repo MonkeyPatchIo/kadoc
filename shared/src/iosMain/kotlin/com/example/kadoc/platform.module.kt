@@ -6,4 +6,5 @@ actual fun getPlatformModule() = module {
     factory { CounterStore() }
     factory { TipStore(get()) }
     factory { CryptoStore(get())}
+    factory {RollStore()}
 }

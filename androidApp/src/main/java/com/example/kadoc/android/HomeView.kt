@@ -23,5 +23,10 @@ fun HomeView(onNavigate: (item: NavigationItem) -> Unit) {
         }) {
             Text("Crypto")
         }
+        Button(onClick = {
+            onNavigate(NavigationItem.Roll)
+        }) {
+            Text("Roll")
+        }
     }
 }

@@ -41,6 +41,9 @@ class MainActivity : ComponentActivity() {
                             composable(NavigationItem.Crypto.path) {
                                 CryptoView()
                             }
+                            composable(NavigationItem.Roll.path) {
+                                RollView()
+                            }
                         }
                     }
                 }
@@ -50,5 +53,5 @@ class MainActivity : ComponentActivity() {
 }
 
 enum class NavigationItem(val path: String) {
-  Home("home"),  Counter("counter"), Tip("tip"), Crypto("crypto")
+  Home("home"),  Counter("counter"), Tip("tip"), Crypto("crypto"), Roll("roll")
 }

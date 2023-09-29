@@ -2,6 +2,7 @@ plugins {
     kotlin("multiplatform")
     kotlin("plugin.serialization")
     id("com.android.library")
+    id("co.touchlab.skie")
 }
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
@@ -37,6 +38,7 @@ kotlin {
                 api("io.insert-koin:koin-core:3.5.0")
                 implementation("io.ktor:ktor-client-core:2.3.4")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
+                implementation("co.touchlab.skie:configuration-annotations:0.5.0")
             }
         }
         val androidMain by getting {

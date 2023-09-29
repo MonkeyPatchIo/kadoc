@@ -7,4 +7,5 @@ actual fun getPlatformModule() = module {
     viewModel { CounterStore() }
     viewModel { TipStore(get()) }
     viewModel { CryptoStore(get()) }
+    viewModel {RollStore()}
 }

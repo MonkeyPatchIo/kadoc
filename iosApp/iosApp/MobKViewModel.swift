@@ -12,9 +12,9 @@ import shared
 @propertyWrapper class VM<S>: ObservableObject where S: Mobk_viewmodelMobkViewModel {
      var wrappedValue: S
 
-    public init(wrappedValue:@escaping @autoclosure () -> S) {
+    public init(wrappedValue: S) {
         debugPrint("init VM \(S.self)")
-        self.wrappedValue =  wrappedValue()
+        self.wrappedValue =  wrappedValue
     }
 
     deinit {

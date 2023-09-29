@@ -7,8 +7,6 @@ class MainApplication : Application(){
     override fun onCreate() {
         super.onCreate()
 
-        Injector.initKoin {
-            modules(appModules)
-        }
+        Injector.initKoin(modules = appModules)
     }
 }

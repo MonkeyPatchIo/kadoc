@@ -2,7 +2,7 @@ import SwiftUI
 
 
 public enum NavigationItem: Hashable {
-    case counter, tip, crypto
+    case counter, tip, crypto, roll
 }
 
 class Coordinator: ObservableObject {
@@ -19,8 +19,8 @@ class Coordinator: ObservableObject {
 
 struct ContentView: View {
     @State var path: [NavigationItem] = []
-
-	var body: some View {
+    
+    var body: some View {
         NavigationStack(path: $path) {
             HomeView()
                 .navigationDestination(for: NavigationItem.self) { item in
@@ -31,10 +31,12 @@ struct ContentView: View {
                         TipView()
                     case .crypto:
                         CryptoView()
+                    case .roll:
+                        RollView()
                     }
                 }
         }
-	}
+    }
 }
 
 

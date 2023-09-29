@@ -1,7 +1,8 @@
 package com.example.kadoc
 
 import org.koin.core.context.startKoin
-import org.koin.dsl.KoinAppDeclaration
+import org.koin.core.module.Module
+import org.koin.dsl.module
 
 object Injector {
 
@@ -9,12 +10,10 @@ object Injector {
         sharedModules
     }
 
-    fun initKoin(appDeclaration: KoinAppDeclaration) {
+    fun initKoin(modules: List<Module> = emptyList()) {
         startKoin {
-            appDeclaration()
-            modules(
-                mods
-            )
+            modules(modules)
+            modules(mods)
         }
     }
 
