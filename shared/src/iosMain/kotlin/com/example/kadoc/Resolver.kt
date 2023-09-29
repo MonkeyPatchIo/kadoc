@@ -6,7 +6,6 @@ import org.koin.core.component.get
 
 object Resolver : KoinComponent {
 
-    fun counterStore(): CounterStore {
-        return get()
-    }
+    fun tipStore(): TipStore = get()
+    fun counterStore(): CounterStore = get()
 }

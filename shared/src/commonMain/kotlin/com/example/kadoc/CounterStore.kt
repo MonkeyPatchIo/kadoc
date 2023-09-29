@@ -4,14 +4,12 @@ import io.monkeypatch.mobk.api.computed
 import io.monkeypatch.mobk.api.observable
 import io.monkeypatch.mobk.api.whenReaction
 import io.monkeypatch.mobk.viewmodel.MobkViewModel
-import kotlinx.coroutines.launch
 import kotlin.time.Duration.Companion.seconds
 
 
-class CounterStore(repository: TipOfDayRepository) : MobkViewModel() {
+class CounterStore : MobkViewModel() {
     var counter by observable(0)
     var message by observable<String?>(null)
-    var tipOfDay by observable<String?>(null)
 
     val decrementAvailable by computed {
         counter > 0
@@ -35,13 +33,5 @@ class CounterStore(repository: TipOfDayRepository) : MobkViewModel() {
 
     fun decrement() {
         counter--
-    }
-
-    init {
-        viewModelScope.launch {
-            repository.getTipOfDay().let {
-                tipOfDay = it.fact
-            }
-        }
     }
 }

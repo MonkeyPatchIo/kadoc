@@ -15,12 +15,11 @@ import org.koin.androidx.compose.koinViewModel
 
 
 @Composable
-fun CounterView() {
+fun CounterView(onTipClicked: () -> Unit = {}) {
     val counterStore = koinViewModel<CounterStore>()
     Observer {
         val counter = counterStore.counter
         val message = counterStore.message
-        val tip = counterStore.tipOfDay
         val decrementAvailable = counterStore.decrementAvailable
         Render {
             Column(modifier = Modifier.padding(16.dp)) {
@@ -35,8 +34,9 @@ fun CounterView() {
                 message?.let {
                     Text(it)
                 }
-                tip?.let {
-                    Text(it)
+
+                Button(onClick = onTipClicked) {
+                    Text("Tip")
                 }
             }
         }

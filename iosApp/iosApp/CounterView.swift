@@ -10,12 +10,19 @@ import SwiftUI
 import shared
 
 struct CounterView: View {
-    let counterStore = Resolver().counterStore()
+    let onTipClicked: () -> Void
+    @StateObject    @VM var counterStore: CounterStore
+
+    init(onTipClicked: @escaping () -> Void = {}) {
+        self.onTipClicked = onTipClicked
+
+        self._counterStore = asStateObject(Resolver().counterStore())
+    }
 
     var body: some View {
         Observer {
             VStack(spacing: 15) {
-                       Text(verbatim: String(self.counterStore.counter))
+                Text(verbatim: String(self.counterStore.counter))
 
                        HStack {
                            Button(action: {
@@ -35,9 +42,9 @@ struct CounterView: View {
                            Text(message)
                        }
 
-                       if let tip = self.counterStore.tipOfDay {
-                           Text(tip)
-                       }
+                Button(action: onTipClicked) {
+                    Text("Cat")
+                }
                    }
                    .padding()
                }
