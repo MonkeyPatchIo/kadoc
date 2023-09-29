@@ -37,6 +37,8 @@ struct RollView: View {
            return "4"
        case .five:
            return "5"
+       default:
+            return "6"
         }
     }
 }

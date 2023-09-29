@@ -9,4 +9,6 @@ object Resolver : KoinComponent {
     fun counterStore(): CounterStore = get()
     fun cryptoStore(): CryptoStore = get()
     fun rollStore(): RollStore = get()
+    fun transactionStore(): TransactionStore = get()
+    fun playerStore(): PlayerStore = get()
 }

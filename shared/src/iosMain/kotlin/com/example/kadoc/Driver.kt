@@ -12,4 +12,10 @@ object Driver {
         }
     }
 
+    fun registerPlayerDriver(playerDriver: () -> PlayerDriver): Module = module {
+        single {
+            playerDriver()
+        }
+    }
+
 }

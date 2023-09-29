@@ -44,6 +44,12 @@ class MainActivity : ComponentActivity() {
                             composable(NavigationItem.Roll.path) {
                                 RollView()
                             }
+                            composable(NavigationItem.Transaction.path) {
+                                TransactionView()
+                            }
+                            composable(NavigationItem.Player.path) {
+                                PlayerView()
+                            }
                         }
                     }
                 }
@@ -53,5 +59,5 @@ class MainActivity : ComponentActivity() {
 }
 
 enum class NavigationItem(val path: String) {
-  Home("home"),  Counter("counter"), Tip("tip"), Crypto("crypto"), Roll("roll")
+  Home("home"),  Counter("counter"), Tip("tip"), Crypto("crypto"), Roll("roll"), Transaction("transaction"), Player("player")
 }

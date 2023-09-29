@@ -18,10 +18,12 @@ struct CryptoView: View {
         Observer {
             VStack(spacing: 10) {
                 TextEditor(text: $text)
+                    .frame(maxHeight: 250)
                 Divider()
                 Text(store.data)
                 Divider()
                 Text(store.hashed)
+                Spacer()
             }
         }
         .onChange(of: self.text, perform: { value in

@@ -7,4 +7,6 @@ actual fun getPlatformModule() = module {
     factory { TipStore(get()) }
     factory { CryptoStore(get())}
     factory {RollStore()}
+    factory {TransactionStore() }
+    factory {PlayerStore(get()) }
 }

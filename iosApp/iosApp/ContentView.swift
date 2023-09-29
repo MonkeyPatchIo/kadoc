@@ -2,7 +2,7 @@ import SwiftUI
 
 
 public enum NavigationItem: Hashable {
-    case counter, tip, crypto, roll
+    case counter, tip, crypto, roll, transaction,player
 }
 
 class Coordinator: ObservableObject {
@@ -33,6 +33,10 @@ struct ContentView: View {
                         CryptoView()
                     case .roll:
                         RollView()
+                    case .transaction:
+                        TransactionView()
+                    case .player:
+                        PlayerView()
                     }
                 }
         }

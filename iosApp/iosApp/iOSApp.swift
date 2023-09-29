@@ -8,6 +8,9 @@ struct iOSApp: App {
         Injector().doInitKoin(modules: [
             Driver().registerCryptoDriver {
                 CryptoDriverIos()
+            },
+            Driver().registerPlayerDriver {
+                PlayerDriverIos()
             }
         ])
     }

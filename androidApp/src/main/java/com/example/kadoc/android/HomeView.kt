@@ -28,5 +28,15 @@ fun HomeView(onNavigate: (item: NavigationItem) -> Unit) {
         }) {
             Text("Roll")
         }
+        Button(onClick = {
+            onNavigate(NavigationItem.Transaction)
+        }) {
+            Text("Transaction")
+        }
+        Button(onClick = {
+            onNavigate(NavigationItem.Player)
+        }) {
+            Text("Player")
+        }
     }
 }

@@ -10,6 +10,9 @@
 		058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557BA273AAA24004C7B11 /* Assets.xcassets */; };
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
+		5A007C302AC7547C0014D0AC /* PlayerDriverIos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A007C2F2AC7547C0014D0AC /* PlayerDriverIos.swift */; };
+		5A007C322AC768E30014D0AC /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A007C312AC768E30014D0AC /* TransactionView.swift */; };
+		5A007C342AC77DBB0014D0AC /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A007C332AC77DBB0014D0AC /* PlayerView.swift */; };
 		5A5941C22ABB98DB00520F3E /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5941C12ABB98DB00520F3E /* Observer.swift */; };
 		5A79870D2AC1D3C1007CC289 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A79870C2AC1D3C1007CC289 /* CounterView.swift */; };
 		5A82F6F02AC6C4A2000C13A0 /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A82F6EF2AC6C4A2000C13A0 /* TipView.swift */; };
@@ -38,6 +41,9 @@
 		058557BA273AAA24004C7B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
+		5A007C2F2AC7547C0014D0AC /* PlayerDriverIos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDriverIos.swift; sourceTree = "<group>"; };
+		5A007C312AC768E30014D0AC /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
+		5A007C332AC77DBB0014D0AC /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		5A5941C12ABB98DB00520F3E /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
 		5A79870C2AC1D3C1007CC289 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		5A82F6EF2AC6C4A2000C13A0 /* TipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
@@ -74,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				5AC7BC3E2AC5DE7C00431ADE /* CryptoDriver.swift */,
+				5A007C2F2AC7547C0014D0AC /* PlayerDriverIos.swift */,
 			);
 			path = driver;
 			sourceTree = "<group>";
@@ -111,6 +118,8 @@
 				5A79870C2AC1D3C1007CC289 /* CounterView.swift */,
 				5A82F6F12AC704E3000C13A0 /* HomeView.swift */,
 				5A82F6EF2AC6C4A2000C13A0 /* TipView.swift */,
+				5A007C312AC768E30014D0AC /* TransactionView.swift */,
+				5A007C332AC77DBB0014D0AC /* PlayerView.swift */,
 			);
 			path = iosApp;
 			sourceTree = "<group>";
@@ -219,6 +228,9 @@
 				5A5941C22ABB98DB00520F3E /* Observer.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 				5A79870D2AC1D3C1007CC289 /* CounterView.swift in Sources */,
+				5A007C322AC768E30014D0AC /* TransactionView.swift in Sources */,
+				5A007C302AC7547C0014D0AC /* PlayerDriverIos.swift in Sources */,
+				5A007C342AC77DBB0014D0AC /* PlayerView.swift in Sources */,
 				5A82F6F42AC70995000C13A0 /* MobKViewModel.swift in Sources */,
 				5A82F6F22AC704E3000C13A0 /* HomeView.swift in Sources */,
 				5A82F6F62AC718FC000C13A0 /* RollView.swift in Sources */,

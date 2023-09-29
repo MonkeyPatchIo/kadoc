@@ -8,4 +8,6 @@ actual fun getPlatformModule() = module {
     viewModel { TipStore(get()) }
     viewModel { CryptoStore(get()) }
     viewModel {RollStore()}
+    viewModel {TransactionStore() }
+    viewModel {PlayerStore(get()) }
 }
